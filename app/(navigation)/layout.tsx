@@ -1,4 +1,12 @@
-import { Fira_Code, IBM_Plex_Mono, JetBrains_Mono } from "next/font/google";
+import {
+  Fira_Code,
+  Google_Sans_Code,
+  IBM_Plex_Mono,
+  JetBrains_Mono,
+  Roboto_Mono,
+  Source_Code_Pro,
+  Space_Mono,
+} from "next/font/google";
 import cn from "classnames";
 import { Navigation } from "@/components/navigation";
 import { GeistMono } from "geist/font/mono";
@@ -22,6 +30,37 @@ const soehneMono = localFont({
   src: "../assets/soehne-mono-buch.woff2",
   variable: "--font-soehne-mono",
 });
+const commitMono = localFont({
+  src: "../assets/commit-mono-regular.woff2",
+  variable: "--font-commitmono",
+});
+const robotoMono = Roboto_Mono({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+  variable: "--font-roboto-mono",
+});
+
+const spaceMono = Space_Mono({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+  variable: "--font-space-mono",
+});
+
+const sourceCodePro = Source_Code_Pro({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+  variable: "--font-source-code-pro",
+});
+
+const googleSansCode = Google_Sans_Code({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+  variable: "--font-google-sans-code",
+});
 
 /**
  * We can't adjust the fallback stack of the font so instead we just extract the
@@ -33,7 +72,18 @@ const geistMonoFontName = GeistMono.style.fontFamily.split(",")[0];
 export default function NavigationLayout({ children }: { children: React.ReactNode }) {
   return (
     <div
-      className={cn("h-full", jetBrainsMono.variable, ibmPlexMono.variable, firaCode.variable, soehneMono.variable)}
+      className={cn(
+        "h-full",
+        jetBrainsMono.variable,
+        ibmPlexMono.variable,
+        firaCode.variable,
+        soehneMono.variable,
+        commitMono.variable,
+        robotoMono.variable,
+        spaceMono.variable,
+        sourceCodePro.variable,
+        googleSansCode.variable,
+      )}
       style={
         {
           "--font-geist-mono": geistMonoFontName,

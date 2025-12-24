@@ -165,6 +165,15 @@ const development: Quicklink[] = [
     link: "https://www.npmjs.com/search?q={Query}",
   },
   {
+    id: "pypi",
+    name: "Search PyPI",
+    link: "https://pypi.org/search/?q={Query}",
+    author: {
+      name: "Hasan Sezer Taşan",
+      link: "https://github.com/hasansezertasan",
+    },
+  },
+  {
     id: "packagist",
     name: "Search Packagist",
     link: "https://packagist.org/?query={Query}",
@@ -185,12 +194,26 @@ const development: Quicklink[] = [
     link: "https://developer.mozilla.org/en-US/search?q={Query}",
   },
   {
+    id: "can-i-use",
+    name: "Can I Use",
+    link: "https://caniuse.com/?search={Query}",
+    author: {
+      name: "Frankie",
+      link: "https://github.com/toFrankie",
+    },
+  },
+  {
     id: "apple",
     name: "Search Apple Dev Docs",
     link: "https://developer.apple.com/search/?q={Query}&type=Documentation",
     icon: {
       name: "brand-apple",
     },
+  },
+  {
+    id: "devdocs",
+    name: "Search Dev Docs",
+    link: "https://devdocs.io?q={Query}",
   },
   {
     id: "radix",
@@ -296,6 +319,15 @@ const development: Quicklink[] = [
     link: "https://kotlinlang.org/docs/home.html?q={argument}&s=full",
     name: "Kotlin Docs",
   },
+  {
+    id: "weixin-docs",
+    name: "Search Weixin Docs",
+    link: "https://developers.weixin.qq.com/doc/search.html?doc_type=miniprogram&query={Query}",
+    author: {
+      name: "Frankie",
+      link: "https://github.com/toFrankie",
+    },
+  },
 ];
 
 const design: Quicklink[] = [
@@ -342,6 +374,15 @@ const design: Quicklink[] = [
     id: "icones",
     name: "Search Icones",
     link: "https://icones.js.org/collection/all?s={Query}",
+  },
+  {
+    id: "freepik",
+    name: "Search Freepik",
+    link: "https://www.freepik.com/search?ai=excluded&format=search&orientation=landscape&type=photo&license=free&query={Query}",
+    author: {
+      name: "Frankie",
+      link: "https://github.com/toFrankie",
+    },
   },
 ];
 
@@ -664,6 +705,11 @@ const entertainment: Quicklink[] = [
       link: "https://github.com/gianpispi",
     },
   },
+  {
+    id: "genius",
+    name: "Search Genius",
+    link: "https://genius.com/search?q={Query}",
+  },
 ];
 
 const socials: Quicklink[] = [
@@ -671,7 +717,7 @@ const socials: Quicklink[] = [
     id: "tweets",
     name: "Search Tweets",
     description: "Search from a list of users",
-    link: 'https://x.com/search?q={argument name="query" | raw}%20from:{argument name="handle" options="@samuelkraft ,  @raycastapp , @peduarte , @thomaspaulmann " default="@samuelkraft" | raw}&src=typed_query&f=live',
+    link: 'https://x.com/search?q={argument name="query" | raw}%20from:{argument name="handle" options="@samuelkraft ,  @raycast , @peduarte , @thomaspaulmann " default="@samuelkraft" | raw}&src=typed_query&f=live',
   },
   {
     id: "linkedin",
@@ -783,6 +829,16 @@ const misc: Quicklink[] = [
     link: "shortcuts://run-shortcut?name={Query}",
     icon: {
       name: "arrow-ne",
+    },
+  },
+  {
+    id: "Makerworld",
+    name: "Search Makerworld",
+    description: "Search Makerworld.com for 3d models.",
+    link: "https://makerworld.com/en/search/models?keyword={query}",
+    author: {
+      name: "Nate Whistler",
+      link: "https://infosec.exchange/@Onyx/",
     },
   },
 ];

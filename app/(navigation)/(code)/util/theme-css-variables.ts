@@ -113,7 +113,7 @@ export function createCssVariablesTheme(options: CssVariablesThemeOptions = {}):
         },
       },
       {
-        scope: ["comment", "string.quoted.docstring.multi"],
+        scope: ["comment", "string.quoted.docstring.multi", "meta.diff.header.from-file", "meta.diff.header.to-file"],
         settings: {
           foreground: variable("token-comment"),
         },
@@ -230,8 +230,20 @@ export function createCssVariablesTheme(options: CssVariablesThemeOptions = {}):
         settings: { foreground: variable("token-number") },
       },
       {
+        scope: ["meta.objectliteral"],
+        settings: { foreground: variable("token-object-literal") },
+      },
+      {
         scope: ["support.variable.property"],
         settings: { foreground: variable("token-property") },
+      },
+      {
+        scope: ["punctuation.definition.deleted.diff", "markup.deleted.diff"],
+        settings: { foreground: variable("token-diff-deleted") },
+      },
+      {
+        scope: ["punctuation.definition.inserted.diff", "markup.inserted.diff"],
+        settings: { foreground: variable("token-diff-inserted") },
       },
     ],
   };

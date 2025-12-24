@@ -117,6 +117,19 @@ function handleBracketClose(textarea: HTMLTextAreaElement) {
   document.execCommand("insertText", false, "}");
 }
 
+const fontMap = {
+  "jetbrains-mono": styles.jetBrainsMono,
+  "geist-mono": styles.geistMono,
+  "ibm-plex-mono": styles.ibmPlexMono,
+  "fira-code": styles.firaCode,
+  "soehne-mono": styles.soehneMono,
+  "roboto-mono": styles.robotoMono,
+  "commit-mono": styles.commitMono,
+  "space-mono": styles.spaceMono,
+  "source-code-pro": styles.sourceCodePro,
+  "google-sans-code": styles.googleSansCode,
+} as const;
+
 function Editor() {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [code, setCode] = useAtom(codeAtom);
@@ -242,15 +255,7 @@ function Editor() {
     <div
       className={classNames(
         styles.editor,
-        themeFont === "geist-mono"
-          ? styles.geistMono
-          : themeFont === "ibm-plex-mono"
-            ? styles.ibmPlexMono
-            : themeFont === "fira-code"
-              ? styles.firaCode
-              : themeFont === "soehne-mono"
-                ? styles.soehneMono
-                : styles.jetBrainsMono,
+        themeFont ? fontMap[themeFont] : styles.jetBrainsMono,
         isHighlightingLines && styles.isHighlightingLines,
         showLineNumbers &&
           selectedLanguage !== LANGUAGES.plaintext && [
@@ -258,10 +263,11 @@ function Editor() {
             numberOfLines > 8 && styles.showLineNumbersLarge,
           ],
       )}
-      style={{ "--editor-padding": "16px 16px 21px 16px", ...themeCSS } as React.CSSProperties}
+      style={{ "--editor-padding": "16px", ...themeCSS } as React.CSSProperties}
       data-value={code}
     >
       <textarea
+        rows={1}
         tabIndex={-1}
         autoComplete="off"
         autoCorrect="off"
